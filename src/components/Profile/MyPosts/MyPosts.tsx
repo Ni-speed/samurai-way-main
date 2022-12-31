@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './MyPosts.module.css'
+import Post from "./Post/Post";
 
 console.log(s)
 type MyPostsPropsType = {
@@ -12,14 +13,14 @@ function MyPosts(props: MyPostsPropsType) {
             <div>
                 My post
                 <div>
-                    New post
+                    <textarea></textarea>
+                    <button>Add Post</button>
+                    <button>Remuve</button>
                 </div>
-                <div className={s.item}>
-                    Post1
-                </div>
-                <div className={s.item}>
-                    Post2
-                </div>
+                <Post titlePost={''}/>
+                <Post titlePost={''}/>
+                <Post titlePost={''}/>
+
             </div>
         </div>
     )
