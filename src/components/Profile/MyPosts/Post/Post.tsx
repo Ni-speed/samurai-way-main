@@ -15,7 +15,7 @@ function Post(props: PostPropsType) {
                 src='https://png.pngtree.com/png-vector/20191103/ourlarge/pngtree-handsome-young-guy-avatar-cartoon-style-png-image_1947775.jpg'/>
             {props.titlePost}
             <div>
-                <span className={s.like}>Like {props.titleLike}</span>
+                <span className={s.like}>Like</span>  {props.titleLike}
             </div>
         </div>
     )
