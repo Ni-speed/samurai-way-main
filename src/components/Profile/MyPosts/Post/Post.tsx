@@ -4,16 +4,18 @@ import s from './Post.module.css'
 console.log(s)
 type PostPropsType = {
     titlePost: string
+    titleLike: string
 }
 
 function Post(props: PostPropsType) {
+    debugger;
     return (
         <div className={s.item}>
             <img
                 src='https://png.pngtree.com/png-vector/20191103/ourlarge/pngtree-handsome-young-guy-avatar-cartoon-style-png-image_1947775.jpg'/>
-            Post1
+            {props.titlePost}
             <div>
-                <span className={s.like}>Like</span>
+                <span className={s.like}>Like {props.titleLike}</span>
             </div>
         </div>
     )
