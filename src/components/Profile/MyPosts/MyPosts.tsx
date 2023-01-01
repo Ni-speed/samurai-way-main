@@ -17,7 +17,7 @@ function MyPosts(props: MyPostsPropsType) {
                     <button>Add Post</button>
                     <button>Remuve</button>
                 </div>
-                <Post titlePost={'sw'}/>
+                <Post titlePost={'ww'}/>
                 <Post titlePost={''}/>
                 <Post titlePost={''}/>git
 
