@@ -1,29 +1,36 @@
 import React from "react";
 import s from './Dialogs.module.css'
+import {NavLink} from "react-router-dom";
 
 type DiologPropsType = {
     wordsDiolog: string;
+}
+
+const DialogsItem = (props:any) => {
+    return (
+        <div className={s.dialog + ' ' + s.active}>
+            <NavLink to='/dialogs/ilmir'>Ilmir</NavLink>
+        </div>
+    )
+
 }
 const Dialogs = (props: DiologPropsType) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-
-                    <div className={s.dialog + ' ' + s.active}>
-                        Ilmir
-                    </div>
-                    <div className={s.dialog}>
-                        Kamila
-                    </div>
-                    <div className={s.dialog}>
-                        Aliya
-                    </div>
-                    <div className={s.dialog}>
-                        Insiya
-                    </div>
-                    <div className={s.dialog}>
-                        Almaz
-                    </div>
+               <DialogsItem name={'Ilmir'} id={'1'}/>
+                <div className={s.dialog}>
+                    <NavLink to='/dialogs/kamila'>Kamila</NavLink>
+                </div>
+                <div className={s.dialog}>
+                    <NavLink to='/dialogs/aliya'>Aliya</NavLink>
+                </div>
+                <div className={s.dialog}>
+                    <NavLink to='/dialogs/insiya'>Insiya</NavLink>
+                </div>
+                <div className={s.dialog}>
+                    <NavLink to='/dialogs/almaz'>Almaz</NavLink>
+                </div>
 
 
             </div>
@@ -36,4 +43,4 @@ const Dialogs = (props: DiologPropsType) => {
     )
 }
 
-    export default Dialogs;
+export default Dialogs;
