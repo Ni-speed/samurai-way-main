@@ -1,7 +1,28 @@
-.content {
-    grid-area: c;
-    background-color: cornflowerblue;
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
 }
-.item {
-    color: crimson;
+
+.dialogsItems {
+    padding: 10px;
+
+}
+
+.dialogsItems .active {
+    color: gold;
+}
+
+.dialogsItems .dialog {
+    padding: 10px;
+
+}
+
+.masseges {
+    padding: 10px;
+
+}
+
+.masseges .massege {
+    padding: 10px;
 }
