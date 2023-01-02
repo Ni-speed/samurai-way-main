@@ -11,16 +11,21 @@ function MyPosts(props: MyPostsPropsType) {
     return (
         <div className={s.content}>
             <div>
-                My post
+                <h3>My post</h3>
                 <div>
-                    <textarea></textarea>
-                    <button>Add Post</button>
-                    <button>Remuve</button>
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                    <div>
+                        <button>Add Post</button>
+                        <button>Remuve</button>
+                    </div>
                 </div>
-                <Post titlePost={`Hi it's my first post`} titleLike={'25'}/>
-                <Post titlePost={`two it's my`} titleLike={'15'}/>
-                <Post titlePost={'three four 5'} titleLike={'45'}/>
-
+                <div className={s.posts}>
+                    <Post titlePost={`Hi it's my first post`} titleLike={'25'}/>
+                    <Post titlePost={`two it's my`} titleLike={'15'}/>
+                    <Post titlePost={'three four 5'} titleLike={'45'}/>
+                </div>
             </div>
         </div>
     )
