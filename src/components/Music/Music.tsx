@@ -8,6 +8,9 @@ const Music = (props: MusicPropsType) => {
     return (
         <div>
             Music
+            <div>
+                {props.wordsMusic}
+            </div>
         </div>
     )
 }

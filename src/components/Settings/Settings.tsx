@@ -8,6 +8,9 @@ const Settings = (props: SettingsPropsType) => {
     return (
         <div>
             Settings
+            <div>
+                {props.wordsSettings}
+            </div>
         </div>
     )
 }
