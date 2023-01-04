@@ -16,11 +16,11 @@ function App(props: any) {
                 <Header title={'d'}/>
                 <Navbar value={''}/>
                 <div className='app-wrapper-content'>
-                    <Route path='/dialogs' component={Dialogs}/>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
+                    <Route path='/dialogs' render={ () => <Dialogs wordsDiolog={'dos'}/> }/>
+                    <Route path='/profile' render={ () => <Profile titleProfile={'one'}/> }/>
+                    <Route path='/news' render={ () => <News wordsNews={'Hello'}/> } />
+                    <Route path='/music' render={() => <Music wordsMusic={'Hi, hi hi Hi'}/> }/>
+                    <Route path='/settings' render={() => <Settings wordsSettings={'yo yo yo '}/> }/>
                 </div>
             </div>
         </BrowserRouter>

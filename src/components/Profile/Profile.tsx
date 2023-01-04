@@ -9,7 +9,7 @@ type ProfilePropsType = {
     titleProfile: string
 }
 
-function Profile(props: ProfilePropsType) {
+const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div>
             <ProfileInfo titleProfileInfo={''}/>

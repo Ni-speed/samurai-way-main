@@ -6,7 +6,7 @@ type ProfileInfoPropsType = {
     titleProfileInfo: string
 }
 
-function ProfileInfo(props: ProfileInfoPropsType) {
+const ProfileInfo: React.FC<ProfileInfoPropsType> = (props) => {
     return (
         <div>
             <div>

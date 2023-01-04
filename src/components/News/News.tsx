@@ -8,6 +8,7 @@ const News = (props: NewsPropsType) => {
     return (
         <div>
             News
+            <div>{props.wordsNews}</div>
         </div>
     )
 }
