@@ -9,47 +9,63 @@ type DiologPropsType = {
 
 type DialogsItemPropsType = {
     name: string;
-    id: string;
+    id: number;
 }
-const DialogsItem: React.FC<DialogsItemPropsType> = (props) => {
-    let path = '/dialogs/' + props.id
-    return (
-        <div className={s.dialog + ' ' + s.active}>
-            <NavLink to={path}>{props.name}</NavLink>
-        </div>
-    )
 
-}
 
 type MassegePropsType = {
     massage: string;
 }
-const Massege = (props: MassegePropsType) => {
-    return (
-        <div className={s.masseg}>{props.massage}</div>
-    )
-}
-const Dialogs = (props: DiologPropsType) => {
+
+
+
+
+/* <DialogsItem name={dialogsData[0].name} id={dialogsData[0].id}/>,
+ <DialogsItem name={dialogsData[1].name} id={dialogsData[1].id}/>,
+ <DialogsItem name={dialogsData[2].name} id={dialogsData[2].id}/>,
+ <DialogsItem name={dialogsData[3].name} id={dialogsData[3].id}/>,
+ <DialogsItem name={dialogsData[4].name} id={dialogsData[4].id}/>
+]*/
+
+export const Dialogs = (props: DiologPropsType) => {
+    const DialogsItem: React.FC<DialogsItemPropsType> = (props) => {
+        let path = '/dialogs/' + props.id
+        return (
+            <div className={s.dialog + ' ' + s.active}>
+                <NavLink to={path}>{props.name}</NavLink>
+            </div>
+        )
+    }
+    const Massege = (props: MassegePropsType) => {
+        return (
+            <div className={s.dialog}>{props.massage}</div>
+        )
+    }
+    let dialogsData = [
+        {id: 1, name: 'Ilmir'},
+        {id: 2, name: 'Kamila'},
+        {id: 3, name: 'Aliya'},
+        {id: 4, name: 'Insia'},
+        {id: 5, name: 'Almaz'}
+    ]
+    let massegesData = [
+        {id: 1, massage: 'Hi!'},
+        {id: 2, massage: 'How ara you?'},
+        {id: 3, massage: 'I\'am fine'}
+    ]
+    let dialogsElements = dialogsData.map(d => <DialogsItem name={d.name} id={d.id}/>);
+    let massegesElements = massegesData.map( m => <Massege massage={m.massage}/>);
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
 
-                <DialogsItem name='Ilmir' id='1'/>
-                <DialogsItem name='Kamila' id='2'/>
-                <DialogsItem name='Aliya' id='3'/>
-                <DialogsItem name='Insiya' id='4'/>
-                <DialogsItem name='Almaz' id='5'/>
-
+                {dialogsElements}
             </div>
             <div className={s.masseges}>
-
-                <Massege massage='Hi!'/>
-                <Massege massage='How ara you?'/>
-                <Massege massage="I'am fine"/>
-
+                {massegesElements}
             </div>
         </div>
     )
 }
 
-export default Dialogs;
+

@@ -2,10 +2,21 @@ import React from 'react';
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 
-console.log(s)
+
 type MyPostsPropsType = {
-    titleMyPosts: string
+    titleMyPosts: postsData[] | string
 }
+type postsData = {
+    id: number
+    titlePost: string
+    titleLike: number
+}
+let postsData = [
+    {id: 1, titlePost: 'Hi it\'s my first post', titleLike: 25},
+    {id: 2, titlePost: 'two it\'s my', titleLike: 15},
+    {id: 3, titlePost: 'three four 5', titleLike: 45},
+]
+let postsElements = postsData.map(p => <Post titlePost={p.titlePost} titleLike={p.titleLike}/>);
 
 function MyPosts(props: MyPostsPropsType) {
     return (
@@ -22,9 +33,7 @@ function MyPosts(props: MyPostsPropsType) {
                     </div>
                 </div>
                 <div className={s.posts}>
-                    <Post titlePost={`Hi it's my first post`} titleLike={'25'}/>
-                    <Post titlePost={`two it's my`} titleLike={'15'}/>
-                    <Post titlePost={'three four 5'} titleLike={'45'}/>
+                    {postsElements}
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import s from './Post.module.css'
 console.log(s)
 type PostPropsType = {
     titlePost: string
-    titleLike: string
+    titleLike: number
 }
 
 function Post(props: PostPropsType) {
