@@ -13,7 +13,7 @@ function App(props: any) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
-                <Header title={'d'}/>
+                <Header title={'dd'}/>
                 <Navbar value={''}/>
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' render={ () => <Dialogs wordsDiolog={'dos'}/> }/>
