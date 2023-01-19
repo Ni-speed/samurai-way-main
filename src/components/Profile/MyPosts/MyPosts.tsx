@@ -4,21 +4,16 @@ import Post from "./Post/Post";
 
 
 type MyPostsPropsType = {
-    titleMyPosts: postsData[] | string
+    titleMyPosts: postsData[]
 }
 type postsData = {
     id: number
     titlePost: string
     titleLike: number
 }
-let postsData = [
-    {id: 1, titlePost: 'Hi it\'s my first post', titleLike: 25},
-    {id: 2, titlePost: 'two it\'s my', titleLike: 15},
-    {id: 3, titlePost: 'three four 5', titleLike: 45},
-]
-let postsElements = postsData.map(p => <Post titlePost={p.titlePost} titleLike={p.titleLike}/>);
 
 function MyPosts(props: MyPostsPropsType) {
+    let postsElements = props.titleMyPosts.map(p => <Post titlePost={p.titlePost} titleLike={p.titleLike}/>)
     return (
         <div className={s.content}>
             <div>
