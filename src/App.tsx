@@ -10,8 +10,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 
 function App(props: any) {
-    return (
-        <BrowserRouter>
+    return <BrowserRouter>
             <div className='app-wrapper'>
                 <Header title={'dd'}/>
                 <Navbar value={''}/>
@@ -25,7 +24,7 @@ function App(props: any) {
                 </div>
             </div>
         </BrowserRouter>
-    );
+
 }
 
 

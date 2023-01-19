@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
+import {DialogsItem} from "./DialogItem/DialogsItem";
+import {Massege} from "./Message/Message";
 
 type DiologPropsType = {
     wordsDiolog: string;
@@ -17,30 +18,8 @@ type MassegePropsType = {
     massage: string;
 }
 
-
-
-
-/* <DialogsItem name={dialogsData[0].name} id={dialogsData[0].id}/>,
- <DialogsItem name={dialogsData[1].name} id={dialogsData[1].id}/>,
- <DialogsItem name={dialogsData[2].name} id={dialogsData[2].id}/>,
- <DialogsItem name={dialogsData[3].name} id={dialogsData[3].id}/>,
- <DialogsItem name={dialogsData[4].name} id={dialogsData[4].id}/>
-]*/
-
 export const Dialogs = (props: DiologPropsType) => {
-    const DialogsItem: React.FC<DialogsItemPropsType> = (props) => {
-        let path = '/dialogs/' + props.id
-        return (
-            <div className={s.dialog + ' ' + s.active}>
-                <NavLink to={path}>{props.name}</NavLink>
-            </div>
-        )
-    }
-    const Massege = (props: MassegePropsType) => {
-        return (
-            <div className={s.dialog}>{props.massage}</div>
-        )
-    }
+
     let dialogsData = [
         {id: 1, name: 'Ilmir'},
         {id: 2, name: 'Kamila'},
