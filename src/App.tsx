@@ -10,10 +10,15 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 
 type AppPropsType = {
+    state: Object
+}
+
+type Object = {
     postsData: postsData[]
     massegesData: massegesData[]
     dialogsData: dialogsData[]
 }
+
 type postsData = {
     id: number
     titlePost: string
@@ -34,8 +39,8 @@ function App(props: AppPropsType) {
                 <Header title={'dd'}/>
                 <Navbar value={''}/>
                 <div className='app-wrapper-content'>
-                    <Route path='/dialogs' render={ () => <Dialogs wordsDiolog={props.dialogsData} wordsMessage={props.massegesData}/> }/>
-                    <Route path='/profile' render={ () => <Profile titleProfile={props.postsData}/> }/>
+                    <Route path='/dialogs' render={ () => <Dialogs  wordsDiolog={props.state.dialogsData} wordsMessage={props.state.massegesData}/> }/>
+                    <Route path='/profile' render={ () => <Profile titleProfile={props.state.postsData}/> }/>
                     <Route path='/news' render={ () => <News wordsNews={'Hello'}/> } />
                     <Route path='/music' render={() => <Music wordsMusic={'Hi, hi hi Hi'}/> }/>
                     <Route path='/settings' render={() => <Settings wordsSettings={'yo yo yo '}/> }/>
