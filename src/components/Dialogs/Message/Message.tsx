@@ -8,7 +8,7 @@ type MassegePropsType = {
 
  export   const Massege = (props: MassegePropsType) => {
         return (
-            <div className={s.dialog}>{props.massage}</div>
+            <div className={s.dialogs}>{props.massage}</div>
         )
 }
 

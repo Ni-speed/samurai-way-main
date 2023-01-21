@@ -13,11 +13,6 @@ type postsData = {
     titlePost: string
     titleLike: number
 }
-// let postsData = [
-//     {id: 1, titlePost: 'Hi it\'s my first post', titleLike: 25},
-//     {id: 2, titlePost: 'two it\'s my', titleLike: 15},
-//     {id: 3, titlePost: 'three four 5', titleLike: 45},
-// ]
 
 const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
