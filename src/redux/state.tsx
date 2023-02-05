@@ -1,5 +1,10 @@
+import {renderEntireTree} from "../render";
 
-
+type postsData = {
+    id: number
+    titlePost: string
+    titleLike: number
+}
 export let state = {
         postsData:[
             {id: 1, titlePost: 'Hi it\'s my first post', titleLike: 25},
@@ -17,5 +22,20 @@ export let state = {
             {id: 1, massage: 'Hi!'},
             {id: 2, massage: 'How ara you?'},
             {id: 3, massage: 'I\'am fine'}
+        ],
+        bestFriendsMasseges: [
+            {id: 1, massage: 'Hi!'},
+            {id: 2, massage: 'test'},
+            {id: 3, massage: 'test'}
         ]
+}
+
+export  const addPost = (myNewPost:string) => {
+    let newPost: postsData = {
+        id: 4,
+        titlePost: myNewPost,
+        titleLike: 0
+    }
+    state.postsData.push(newPost)
+    renderEntireTree(state)
 }

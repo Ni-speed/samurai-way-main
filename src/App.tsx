@@ -8,9 +8,13 @@ import {BrowserRouter, Route, Router} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
+import {Friends} from "./components/Friends/Friends";
+import {addPost} from "./redux/state";
+
 
 type AppPropsType = {
     state: Object
+    addPost: (myNewPost:string)=>void
 }
 
 type Object = {
@@ -34,16 +38,18 @@ type dialogsData = {
 }
 
 function App(props: AppPropsType) {
+
     return <BrowserRouter>
             <div className='app-wrapper'>
                 <Header title={'dd'}/>
                 <Navbar value={''}/>
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' render={ () => <Dialogs  wordsDiolog={props.state.dialogsData} wordsMessage={props.state.massegesData}/> }/>
-                    <Route path='/profile' render={ () => <Profile titleProfile={props.state.postsData}/> }/>
+                    <Route path='/profile' render={ () => <Profile titleProfile={props.state.postsData} addPost={addPost}/> }/>
                     <Route path='/news' render={ () => <News wordsNews={'Hello'}/> } />
                     <Route path='/music' render={() => <Music wordsMusic={'Hi, hi hi Hi'}/> }/>
                     <Route path='/settings' render={() => <Settings wordsSettings={'yo yo yo '}/> }/>
+                    <Route path='/friends' render={() => <Friends  /> }/>
 
                 </div>
             </div>

@@ -11,3 +11,10 @@
 .item a.activeLink {
     color: gold;
 }
+.navHeader {
+    margin-bottom: 50px;
+}
+.bestFriends {
+    display: flex;
+    justify-content: space-evenly;
+}
