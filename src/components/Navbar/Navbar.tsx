@@ -10,6 +10,7 @@ function Navbar(props: NavbarPropsType) {
     return <nav className={s.nav}>
         <div className={s.navHeader}>
             <div className={s.item}>
+                {/*<NavLink to={'/dialogs'} className={( isActive )=> isActive ? s.activeLink : '' }  />*/}
                 <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
             </div>
             <div className={`${s.item} ${s.active}`}>

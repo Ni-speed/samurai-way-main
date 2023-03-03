@@ -7,7 +7,6 @@ type PostPropsType = {
 }
 
 function Post(props: PostPropsType) {
-    debugger;
     return (
         <div className={s.item}>
             <img

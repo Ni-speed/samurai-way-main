@@ -1,11 +1,14 @@
-import React, {useRef} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
+import {addPostAC, store, updateNewPostTextAC} from "../../../redux/state";
 
 
 type MyPostsPropsType = {
     titleMyPosts: postsData[]
-    addPost: (myNewPost: string) => void
+    addPost: (myNewPost:string) => void
+    newPostText: string
+    updateNewPostText: (newText:string)=>void
 }
 type postsData = {
     id: number
@@ -15,11 +18,13 @@ type postsData = {
 
 function MyPosts(props: MyPostsPropsType) {
     let postsElements = props.titleMyPosts.map(p => <Post titlePost={p.titlePost} titleLike={p.titleLike}/>)
-    const newText = useRef<HTMLTextAreaElement>(null)
     const addPost = () => {
-        if (newText.current !== null)
-            // alert(newText.current.value)
-            props.addPost(newText.current.value)
+        store.dispatch(addPostAC())
+    }
+
+    const onChangeHeader = (event: ChangeEvent<HTMLTextAreaElement>) => {
+        let text = event.currentTarget.value
+        store.dispatch(updateNewPostTextAC(text))
     }
 
     return (
@@ -28,7 +33,11 @@ function MyPosts(props: MyPostsPropsType) {
                 <h3>My post</h3>
                 <div>
                     <div>
-                        <textarea ref={newText}></textarea>
+                        <textarea
+                            onChange={onChangeHeader}
+                            value={props.newPostText}
+                        >
+                        </textarea>
                     </div>
                     <div>
                         <button onClick={addPost}>Add Post</button>

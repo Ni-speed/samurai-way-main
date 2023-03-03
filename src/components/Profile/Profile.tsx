@@ -2,25 +2,26 @@ import React from 'react';
 import s from './Profile.module.css'
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import {addPost} from "../../redux/state";
+import {profilePageType, store} from "../../redux/state";
 
 
-console.log(s)
+
 type ProfilePropsType = {
-    titleProfile: postsData[]
+    profilePage: profilePageType
     addPost: (myNewPost:string)=>void
-}
-type postsData = {
-    id: number
-    titlePost: string
-    titleLike: number
+    updateNewPostText: (newText:string)=>void
 }
 
 const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div>
             <ProfileInfo titleProfileInfo={''}/>
-            <MyPosts titleMyPosts={props.titleProfile} addPost={addPost}/>
+            <MyPosts
+                titleMyPosts={props.profilePage.postsData}
+                addPost={store.dispatch}
+                newPostText={props.profilePage.newPostText}
+                updateNewPostText={store.dispatch}
+            />
         </div>
     )
 }
