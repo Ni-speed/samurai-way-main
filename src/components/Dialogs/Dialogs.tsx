@@ -2,13 +2,14 @@ import React, {ChangeEvent, KeyboardEvent} from "react";
 import s from './Dialogs.module.css'
 import {DialogsItem} from "./DialogItem/DialogsItem";
 import {Massege} from "./Message/Message";
-import {addMessageAC, store, updateNewMessageTextAC} from "../../redux/state";
+import { store} from "../../redux/state";
+import {addMessageAC, updateNewMessageTextAC} from "../../redux/dialogPageReducer";
 
 type DiologPropsType = {
     wordsDiolog: dialogsData[];
     wordsMessage: massegesData[]
     newMassageText: string
-    newMessageTextAC: (newMessage: string) => void
+    // newMessageTextAC: (newMessage: string) => void
 }
 type massegesData = {
     massage: string

@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Heade.module.css'
-console.log(s)
 type HeaderPropsType = {
     title: string
 }
